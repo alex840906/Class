@@ -11,6 +11,7 @@ int main()
     srand(time(NULL));
 
     Chromosome chromosomeList[chromosomeNum];
+    
     //cout<<chromosomeList[0].fitnessValue<<endl;
 
     

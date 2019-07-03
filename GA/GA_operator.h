@@ -2,10 +2,10 @@
 
 
 
-// void Init_Chromosome(Chromosome);
+void Init_Chromosome(Chromosome);
 
 
-// void Init_Chromosome(Chromosome )
-// {
+void Init_Chromosome(Chromosome chromosome)
+{
 
-// }
+}
