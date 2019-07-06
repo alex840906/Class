@@ -16,12 +16,15 @@ int main()
 {
     srand(time(NULL));
 
-    Chromosome *chromosomeList[10];
+    vec_1D Chromosome *chromosomeList[10];
 
     for (int i = 0; i < chromosomeNum; i++)
         chromosomeList[i] = new Chromosome();
 
-    //Chromosome *chromosome = new Chromosome(solutionSize);
+    int a[5];
+    cout<<a.size()<<endl;
+    Chromosome *chromosome = new Chromosome(solutionSize);
+    cout<<size(chromosomeList)<<endl;
     /*int sum = 0;
     sum = evaluation(chromosomeList[0]->getSolution());
     chromosomeList[0]->setFitnessValue(sum);
