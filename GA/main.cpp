@@ -7,9 +7,8 @@ int evaluation(vec_1D solution)
 {
     int sum = 0;
     for (int i = 0; i < solutionSize; i++)
-    {
         sum += solution[i];
-    }
+    
     return sum;
 }
 
@@ -20,12 +19,10 @@ int main()
     Chromosome *chromosomeList[10];
 
     for (int i = 0; i < chromosomeNum; i++)
-    {
         chromosomeList[i] = new Chromosome();
-    }
 
     //Chromosome *chromosome = new Chromosome(solutionSize);
-    int sum = 0;
+    /*int sum = 0;
     sum = evaluation(chromosomeList[0]->getSolution());
     chromosomeList[0]->setFitnessValue(sum);
 
@@ -34,6 +31,7 @@ int main()
     chromosomeList[0]->setFitnessValue(chromosomeList[0]->getFitnessValue() + 1);
 
     cout << chromosomeList[0]->getFitnessValue() << endl;
+    */
 
     system("pause");
 }
