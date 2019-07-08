@@ -26,6 +26,13 @@ int main()
     tmp = chromosomeList[0]->getSolution();
     for(int i=0;i<solutionSize;i++)
         cout<<tmp[i];
+
+
+    cout<<endl;
+    crossover(chromosomeList);
+    tmp = chromosomeList[0]->getSolution();
+    for(int i=0;i<solutionSize;i++)
+        cout<<tmp[i];
     //cout<<chromosomeList[0]->getSolution()<<endl;
 
 

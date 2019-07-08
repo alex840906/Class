@@ -21,8 +21,7 @@ void vectorErase(int r1, int r2, vec_1D &targetVecotr)
     }
 }
 
-
-void crossover(Chromosome** chromosomeList)
+void crossover(Chromosome **chromosomeList)
 {
     vec_1D remainChromosome(chromosomeNum);
     for (int i = 0; i < chromosomeNum; i++)
@@ -42,18 +41,26 @@ void crossover(Chromosome** chromosomeList)
         if (probabilityToCrossover < crossoverRate)
         {
             int cuttingPoint_1, cuttingPoint_2;
-            cuttingPoint_1 = rand() / solutionSize;
-            cuttingPoint_2 = rand() / solutionSize;
+            cuttingPoint_1 = rand() % solutionSize;
+            cuttingPoint_2 = rand() % solutionSize;
+            vec_1D tmp_1 = chromosomeList[r_1]->getSolution();
+            vec_1D tmp_2 = chromosomeList[r_2]->getSolution();
 
             if (cuttingPoint_1 < cuttingPoint_2)
             {
-                for (int i = cuttingPoint_1; i <= cuttingPoint_2; i++)
-                    swap(chromosomeList[r_1]->getSolution()[i], chromosomeList[r_2]->getSolution()[i]);
+                for (int j = cuttingPoint_1; j <= cuttingPoint_2; j++)
+                    swap(tmp_1[j], tmp_2[j]);
+                
+                chromosomeList[r_1]->setSolution(tmp_1);
+                chromosomeList[r_2]->setSolution(tmp_2);     
             }
             else
             {
-                for (int i = cuttingPoint_2; i <= cuttingPoint_1; i++)
-                    swap(chromosomeList[r_1]->getSolution()[i], chromosomeList[r_2]->getSolution()[i]);
+                for (int j = cuttingPoint_2; j <= cuttingPoint_1; j++)
+                    swap(tmp_1[j], tmp_2[j]);
+
+                chromosomeList[r_1]->setSolution(tmp_1);
+                chromosomeList[r_2]->setSolution(tmp_2);
             }
             //Erase index from vector
             vectorErase(r_1, r_2, remainChromosome);
@@ -62,7 +69,5 @@ void crossover(Chromosome** chromosomeList)
         else
             //Erase index from vector
             vectorErase(r_1, r_2, remainChromosome);
-            
     }
-
 }
