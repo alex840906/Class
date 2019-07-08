@@ -8,8 +8,8 @@
 
 using namespace std;
 
-typedef vector<bool> vec_1D;
-typedef vector<vector<bool>> vec_2D;
+typedef vector<int> vec_1D;
+typedef vector<vector<int>> vec_2D;
 
 class Chromosome
 {
